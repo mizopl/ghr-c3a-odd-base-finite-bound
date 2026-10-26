@@ -8,7 +8,7 @@
 - **Result Classification:** Named Partial Win `p1` (`CONFIRMED_PARTIAL`)
 - **Primary Finite Certificate:** `object/finite_certificate_17086_27995.json` (`1,204` bytes, `sha256: b1230dd40bb7fcb2ae877bee31547f50dd52657d99c6e19e483271a871c1fe21`)
   - Semigroup generators: $G = \{1518, 1524, 1587, 2024, 2032, 2116\} = \{3, 4\} \times \{506, 508, 529\}$
-  - Mask bound: $B = 17,086$, mask $M = \operatorname{span}_{\mathbb{N}_0}(G) \cap [0, 17086]$ (`object/mask_17086.txt`, $|M| = 3,153$, $0 \in M$, $\max M = 17,086$)
+  - Mask bound: $B = 17,086$, mask $M = \mathrm{span}_{\mathbb{N}_0}(G) \cap [0, 17086]$ (`object/mask_17086.txt`, $|M| = 3,153$, $0 \in M$, $\max M = 17,086$)
   - Sum support: $S = M + M \subseteq [0, 34172]$ (`object/sum_support_17086.txt`, $|S| = 18,835$)
   - Controlled-carry odd base: $q = 27,995 < 2B + 1 = 34,173$
   - Pruned difference alphabet: $\widetilde{D} = \{0\} \cup \{\pm d : d \in \widetilde{D}_+\}$ (`object/pruned_differences_17086_27995.tsv`, $|\widetilde{D}_+| = 13,997$, $|\widetilde{D}| = 27,995 = q$, all $27,995$ residues modulo $q = 27,995$ pairwise distinct)
@@ -64,7 +64,7 @@ Notice that in Kleinwaks's own Lean formalization (`formalization/lean/RequestPr
   $$\widetilde{D} = \{0\} \cup \{+d : d \in \widetilde{D}_+\} \cup \{-d : d \in \widetilde{D}_+\} \subseteq M - M.$$
   Then:
   1. For each $r$, $+d(r) \bmod q \in \{r, q - r\}$ and $-d(r) \bmod q \in \{r, q - r\}$ are the two distinct elements of the pair $\{r, q - r\}$. Since the pairs $\{r, q - r\}$ are disjoint for $1 \le r \le (q - 1)/2$ and exclude $0$, **all $1 + 2|\widetilde{D}_+|$ elements of $\widetilde{D}$ have pairwise distinct residues modulo $q$**.
-  2. Consequently, the base-$q$ evaluation map $\operatorname{eval}_q : \widetilde{D}^N \to \mathbb{Z}$, $(d_0, \dots, d_{N-1}) \mapsto \sum_{i=0}^{N-1} d_i q^i$, is **injective** (`residue_word_injective` in `CoreConstruction.lean`: if $\sum_{i=0}^{N-1} d_i q^i = \sum_{i=0}^{N-1} d'_i q^i$, reducing modulo $q$ gives $d_0 \equiv d'_0 \pmod{q}$, hence $d_0 = d'_0$; subtracting and dividing by $q$ inductively gives $d_i = d'_i$ for all $i$).
+  2. Consequently, the base-$q$ evaluation map $\mathrm{eval}_q : \widetilde{D}^N \to \mathbb{Z}$, $(d_0, \dots, d_{N-1}) \mapsto \sum_{i=0}^{N-1} d_i q^i$, is **injective** (`residue_word_injective` in `CoreConstruction.lean`: if $\sum_{i=0}^{N-1} d_i q^i = \sum_{i=0}^{N-1} d'_i q^i$, reducing modulo $q$ gives $d_0 \equiv d'_0 \pmod{q}$, hence $d_0 = d'_0$; subtracting and dividing by $q$ inductively gives $d_i = d'_i$ for all $i$).
 
 - **Theorem 2 (Exact Multinomial Difference Lower Bound $|V - V| = |U - U| \ge D_N$):**
   Given non-negative integer counts $(n_d)_{d \in \widetilde{D}_+}$ with $n_0 := N - 2\sum_{d \in \widetilde{D}_+} n_d \ge 0$, set
@@ -76,8 +76,8 @@ Notice that in Kleinwaks's own Lean formalization (`formalization/lean/RequestPr
   $$\sum_{i=0}^{N-1} a_i(w) + \sum_{i=0}^{N-1} b_i(w) = \sum_{i=0}^{N-1} (a_i(w) + b_i(w)) = 2 \sum_{d \in \widetilde{D}_+} n_d \kappa(d) = 2L.$$
   Moreover, because $+d$ and $-d$ occur an equal number of times $n_d$, $\sum_{i=0}^{N-1} (a_i(w) - b_i(w)) = \sum_{i=0}^{N-1} w_i = 0$, so
   $$\sum_{i=0}^{N-1} a_i(w) = \sum_{i=0}^{N-1} b_i(w) = L.$$
-  Therefore $u(w) := \sum_{i=0}^{N-1} a_i(w) q^i \in U$ and $v(w) := \sum_{i=0}^{N-1} b_i(w) q^i \in U$, with $u(w) - v(w) = \operatorname{eval}_q(w) \in U - U$.
-  By Theorem 1, $\operatorname{eval}_q$ is injective on $\mathcal{W} \subseteq \widetilde{D}^N$, so
+  Therefore $u(w) := \sum_{i=0}^{N-1} a_i(w) q^i \in U$ and $v(w) := \sum_{i=0}^{N-1} b_i(w) q^i \in U$, with $u(w) - v(w) = \mathrm{eval}_q(w) \in U - U$.
+  By Theorem 1, $\mathrm{eval}_q$ is injective on $\mathcal{W} \subseteq \widetilde{D}^N$, so
   $$|V - V| = |U - U| \ge |\mathcal{W}| = D_N := \frac{N!}{n_0! \prod_{d \in \widetilde{D}_+} (n_d!)^2}.$$
 
 - **Theorem 3 (Saddle-Point Sumset Upper Bound $|V + V| = |U + U| \le S_N$):**
@@ -106,7 +106,7 @@ Notice that in Kleinwaks's own Lean formalization (`formalization/lean/RequestPr
 
 ## 3. Summary of Certified Results
 
-| Certificate File | $(B, q, N)$ | $|M|$ | $|S|$ | $|\widetilde{D}_+|$ | $|\widetilde{D}|$ | $n_0$ | $L$ | `mpmath` 60-dps Lower Bound | Pure Integer (Lean Stirling) Lower Bound | Margin vs `1.19102809` |
+| Certificate File | $(B, q, N)$ | $\lvert M\rvert$ | $\lvert S\rvert$ | $\lvert \widetilde{D}_+\rvert$ | $\lvert \widetilde{D}\rvert$ | $n_0$ | $L$ | `mpmath` 60-dps Lower Bound | Pure Integer (Lean Stirling) Lower Bound | Margin vs `1.19102809` |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | `object/kleinwaks_finite_certificate_17032_34065.json` (Baseline) | $(17032, 34065, 10^{13})$ | $3,121$ | $18,730$ | $16,184$ | $32,369$ | $14,962,802,398$ | $51,500,691,976,683,641$ | `1.19102809427254087548` | `1.19102809424738956213` | `0.00000000` (baseline) |
 | `object/finite_certificate_17032_27995.json` (Secondary) | $(17032, 27995, 10^{13})$ | $3,121$ | $18,730$ | $13,997$ | $27,995$ | $17,075,622,128$ | $50,029,864,065,809,249$ | **`1.19229904840497896133`** | **`1.19229904838280822699`** | **`+0.00127095`** |
@@ -124,7 +124,7 @@ At $B = 17,086$ and odd base $q = 27,995$, **every single one** of the $(q - 1)/
 | `object/finite_certificate_17086_27995.json` | `1,204` | `b1230dd40bb7fcb2ae877bee31547f50dd52657d99c6e19e483271a871c1fe21` | Primary finite-depth ($N=10^{13}$) certificate ($B=17086, q=27995, \theta > 1.19230254$) |
 | `object/finite_certificate_17032_27995.json` | `1,204` | `db1517d0d4b32ad27df910162aa55d283fa9e6a4fa0374bff651b6ae655de04b` | Secondary finite-depth ($N=10^{13}$) certificate on Kleinwaks's mask ($B=17032, q=27995, \theta > 1.19229904$) |
 | `object/kleinwaks_finite_certificate_17032_34065.json` | `1,204` | `5c85a63a7a8a8d7b596c3d375239ecd91e45fdf991feb44500a922deeb9d8239` | Kleinwaks [K2026b] finite-depth baseline certificate ($B=17032, Q=34065, \theta > 1.19102809$) |
-| `object/mask_17086.txt` | `18,450` | `3f9c0909410adb97e55c5ae7ab5a1a5dd54a11c415fa4513bbb8c2c06f29b358` | All `3,153` elements of $M = \operatorname{span}_{\mathbb{N}_0}(G) \cap [0, 17086]$ |
+| `object/mask_17086.txt` | `18,450` | `3f9c0909410adb97e55c5ae7ab5a1a5dd54a11c415fa4513bbb8c2c06f29b358` | All `3,153` elements of $M = \mathrm{span}_{\mathbb{N}_0}(G) \cap [0, 17086]$ |
 | `object/sum_support_17086.txt` | `112,542` | `7815e2fa41072d923eaeb99c46b3282f837093b6075ff5e4491d3aa89da58acc` | All `18,835` elements of $S = M + M \subseteq [0, 34172]$ |
 | `object/pruned_differences_17086_27995.tsv` | `662,028` | `32e129199434a9122f0beab45dd69309921e4e389117f1fbdc00fa94580f3c0c` | Complete `13,997`-row witness & count table (`r`, `d`, `alpha_d`, `beta_d`, `kappa_d`, `pos_res_mod_q`, `neg_res_mod_q`, `n_d`) |
 | `object/3a.md` | `9,559` | `7fcaf2453bc29c26452b9421152df4111ec3aa459d40de653fa0fabd5d439adf` | Live snapshot of `https://raw.githubusercontent.com/teorth/optimizationproblems/main/constants/3a.md` |
