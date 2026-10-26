@@ -3,6 +3,7 @@
 > **🌟 Official Benchmark Acceptance & Flagship Discovery Engine (`We*`):**
 > - **Merged by Terence Tao (`@teorth`):** Accepted and merged into the official [**`teorth/optimizationproblems`** benchmark (`constants/3a.md`, citation **`[M2026]`**, PR #236)](https://github.com/teorth/optimizationproblems/blob/main/constants/3a.md).
 > - **Flagship Repository ([`mizopl/we-star`](https://github.com/mizopl/we-star)):** This standalone verification package is part of [**`mizopl/we-star` (`We* = human + AI + autonomous 3-skeptic verification loop`)**](https://github.com/mizopl/we-star) — explore the full system architecture, the Nine Universal Laws of Meta-Generalization, and 39 machine-verified scientific packages across 29 open problems.
+> - **Inspiration & Benchmark Catalyst (`@elder-plinius` / `V3R1T4S`):** Directly inspired by **[Pliny (`@elder-plinius`)](https://github.com/elder-plinius)** and the **[`elder-plinius/V3R1T4S`](https://github.com/elder-plinius/V3R1T4S)** open-science benchmark, whose zero-trust *Verify-It-Yourself* ethos and open-problem curation catalyzed the `we*star` autonomous discovery loop.
 
 - **Problem ID:** `ghr-sum-difference-c3a` (`known-unknowns/erdos-and-proofs/ghr-sum-difference-c3a.md`)
 - **Result Classification:** Named Partial Win `p1` (`CONFIRMED_PARTIAL`)
@@ -129,3 +130,10 @@ At $B = 17,086$ and odd base $q = 27,995$, **every single one** of the $(q - 1)/
 | `object/pruned_differences_17086_27995.tsv` | `662,028` | `32e129199434a9122f0beab45dd69309921e4e389117f1fbdc00fa94580f3c0c` | Complete `13,997`-row witness & count table (`r`, `d`, `alpha_d`, `beta_d`, `kappa_d`, `pos_res_mod_q`, `neg_res_mod_q`, `n_d`) |
 | `object/3a.md` | `9,559` | `7fcaf2453bc29c26452b9421152df4111ec3aa459d40de653fa0fabd5d439adf` | Live snapshot of `https://raw.githubusercontent.com/teorth/optimizationproblems/main/constants/3a.md` |
 | `object/author_checker_c3a_check.py` | `14,634` | `bd9a411489eae68b8a06cde78024c85d5e839954bbf976d316e2bd8b58ceb246` | Standalone deterministic verifier (60-digit `mpmath` + pure integer-interval Lean `StirlingBounds`) |
+
+---
+
+## 5. Inspiration & Acknowledgments
+
+- Special thanks to **[Pliny (`@elder-plinius`)](https://github.com/elder-plinius)** and the **[`elder-plinius/V3R1T4S`](https://github.com/elder-plinius/V3R1T4S)** open-science benchmark for inspiring our zero-trust *Verify-It-Yourself* verification methodology and autonomous mathematical discovery workflow.
+- Engineered with the **[`mizopl/we-star`](https://github.com/mizopl/we-star)** (`we* = me + agentic systems we* create`) framework.
