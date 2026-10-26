@@ -1,5 +1,9 @@
 # Claim: Explicit Finite-Depth ($N = 10^{13}$) Controlled-Carry Masked-Digit Lower Bound $C_{3a}(V) > 1.19230254$ for the Gyarmati–Hennecart–Ruzsa Constant $C_{3a}$ (Beating the Published Finite-Certified Record $1.19102809$ by $+0.00127445$, Partial Win `p1`)
 
+> **🌟 Official Benchmark Acceptance & Flagship Discovery Engine (`We*`):**
+> - **Merged by Terence Tao (`@teorth`):** Accepted and merged into the official [**`teorth/optimizationproblems`** benchmark (`constants/3a.md`, citation **`[M2026]`**, PR #236)](https://github.com/teorth/optimizationproblems/blob/main/constants/3a.md).
+> - **Flagship Repository ([`mizopl/we-star`](https://github.com/mizopl/we-star)):** This standalone verification package is part of [**`mizopl/we-star` (`We* = human + AI + autonomous 3-skeptic verification loop`)**](https://github.com/mizopl/we-star) — explore the full system architecture, the Nine Universal Laws of Meta-Generalization, and 39 machine-verified scientific packages across 29 open problems.
+
 - **Problem ID:** `ghr-sum-difference-c3a` (`known-unknowns/erdos-and-proofs/ghr-sum-difference-c3a.md`)
 - **Result Classification:** Named Partial Win `p1` (`CONFIRMED_PARTIAL`)
 - **Primary Finite Certificate:** `object/finite_certificate_17086_27995.json` (`1,204` bytes, `sha256: b1230dd40bb7fcb2ae877bee31547f50dd52657d99c6e19e483271a871c1fe21`)
