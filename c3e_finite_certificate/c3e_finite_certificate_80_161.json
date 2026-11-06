@@ -1,0 +1,40 @@
+{
+  "constant_id": "C_3e",
+  "problem_reference": "teorth/optimizationproblems/blob/main/constants/3e.md (Problem 6.43 of [GGSWT2025])",
+  "baseline_beaten": "log(1+sqrt(2))/log(2) = 1.27155330316361201881 ([HRY1999])",
+  "semigroup_generators": [
+    4,
+    5
+  ],
+  "semigroup_gaps": [
+    1,
+    2,
+    3,
+    6,
+    7,
+    11
+  ],
+  "B": 80,
+  "carry_free_base_Q": 161,
+  "N": 10000000000000,
+  "x_num": 8149,
+  "x_den": 10000,
+  "y_num": 42571,
+  "y_den": 50000,
+  "mask_size": 75,
+  "mask_max": 80,
+  "sum_support_size": 155,
+  "sum_support_max": 160,
+  "positive_differences_count": 80,
+  "difference_alphabet_size": 161,
+  "fixed_point_shift_bits": 128,
+  "cfFloorOK": true,
+  "n_0": 1917647564302,
+  "L": 38217661572815,
+  "two_L": 76435323145630,
+  "log_D_N_lower_bound": "32160395410643.40679906796876",
+  "log_S_N_upper_bound": "25272243943117.81885560852418",
+  "certified_lower_bound_mpmath60_floor20dp": "1.27255796845856979212",
+  "certified_lower_bound_pure_integer_lean_stirling_floor20dp": "1.27255796845801701855",
+  "certified_lower_bound_8dp": "1.27255796"
+}

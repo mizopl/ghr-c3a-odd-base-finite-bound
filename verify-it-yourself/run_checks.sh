@@ -20,6 +20,11 @@ done
 echo "== running check_c3a.py on object/ files =="
 "$PY" "$CHK" "$OBJ" || fail=1
 
+if [ -f "$HERE/c3e_finite_certificate/check_c3e.py" ]; then
+  echo "== running check_c3e.py on c3e_finite_certificate/ files =="
+  "$PY" "$HERE/c3e_finite_certificate/check_c3e.py" "$HERE/c3e_finite_certificate" || fail=1
+fi
+
 echo "== negative control: a corrupted copy must FAIL =="
 TMP=$(mktemp -d 2>/dev/null || mktemp -d -t v3check)
 cp -R "$OBJ" "$TMP/bad_obj"
