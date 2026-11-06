@@ -34,11 +34,11 @@ This construction emerged during a post-mortem / lessons-learned review of our $
 
 ## 2. Self-Contained Mathematical Proof (Theorems C1–C3)
 
-Let $B \ge 12$ be an integer, let $H = \langle 4, 5 \rangle = \mathbb{N}_0 \setminus \{1, 2, 3, 6, 7, 11\}$, and set
-$$M = H \cap [0, B], \qquad S = M + M \subseteq [0, 2B], \qquad D = M - M = [-B, B], \qquad Q = 2B + 1.$$
+Let $B \ge 15$ be an integer, let $H = \langle 4, 5 \rangle = \mathbb{N}_0 \setminus \{1, 2, 3, 6, 7, 11\}$, and set
+$$M = H \cap [0, B], \qquad S = M + M = [0, 2B] \setminus \{1, 2, 3, 6, 7, 11\}, \qquad D = M - M = [-B, B], \qquad Q = 2B + 1.$$
 For each $d \in [1, B]$, define the minimum witness cost
 $$\kappa(d) = \min\{a + b : a, b \in M,\ a - b = d\}$$
-and fix a witness pair $(\alpha_d, \beta_d) \in M^2$ with $\alpha_d - \beta_d = d$ and $\alpha_d + \beta_d = \kappa(d)$.
+(so $\kappa(d) = d$ for $d \notin \{1, 2, 3, 6, 7, 11\}$, while $\kappa(1)=9, \kappa(2)=18, \kappa(3)=13, \kappa(6)=14, \kappa(7)=17, \kappa(11)=19$, i.e., $\kappa(d) \in \{d+8, d+10, d+16\}$ on the six gaps) and fix a witness pair $(\alpha_d, \beta_d) \in M^2$ with $\alpha_d - \beta_d = d$ and $\alpha_d + \beta_d = \kappa(d)$.
 
 ### Theorem C1 (Carry-Free Base-$Q$ Freiman $2$-Isomorphism)
 For any $N \ge 1$ and $L \ge 0$, define
@@ -89,3 +89,4 @@ python3 c3e_finite_certificate/check_c3e.py
 - `[GGSWT2025]` B. Georgiev, J. Gómez-Serrano, T. Tao, and A. Z. Wagner, *Mathematical exploration and discovery at scale*, arXiv:2511.02864 (Problem 6.43, §6.25).
 - `[K2026b]` L. Kleinwaks, *Masked-digit sum-difference lower bound*, [`teorth/optimizationproblems#146`](https://github.com/teorth/optimizationproblems/pull/146) (2026).
 - `[O2026]` C. Olafson, *Two-temperature cyclic compression for the Gyarmati–Hennecart–Ruzsa constant*, [`teorth/optimizationproblems#148`](https://github.com/teorth/optimizationproblems/pull/148) and [`carson-olaf/c3a-two-temperature-bound`](https://github.com/carson-olaf/c3a-two-temperature-bound) (2026).
+- `[Can2026b]` A. Canli (`@arhancanli`), *Independent from-scratch exact replay of both $C_{3e}$ certificates (`B=80, N=10^13` and `B=160, N=10^15`) in 90-digit decimal interval arithmetic*, [`teorth/optimizationproblems#339 (comment)`](https://github.com/teorth/optimizationproblems/pull/339#issuecomment-6680348982) and [`arhancanli/quantavane-replays@fb86997/c3e`](https://github.com/arhancanli/quantavane-replays/tree/fb86997fda34c7271f990b0ad603bb79c0482cc9/c3e) (6 Nov 2026).
